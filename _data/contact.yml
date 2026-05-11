@@ -1,0 +1,8 @@
+- type: github
+  icon: "fab fa-github"
+  url: "https://github.com/Eoo0m"
+
+- type: email
+  icon: "fas fa-envelope"
+  noblank: true
+  url: "mailto:jseom818@gmail.com"
