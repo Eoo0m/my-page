@@ -10,9 +10,11 @@ image:
   path: /assets/img/dynplayer-logo.png
 ---
 
-![Dynplayer Logo](https://eoo0m.github.io/my-page/assets/img/dynplayer-logo.png){: width="240" .center }
-_[dynplayer.win](https://dynplayer.win){:target="_blank"}_
-{: .text-center }
+<p align="center">
+  <img src="/my-page/assets/img/dynplayer-logo.png" width="240" alt="Dynplayer Logo" style="border-radius:16px;">
+  <br>
+  <a href="https://dynplayer.win" target="_blank">dynplayer.win</a>
+</p>
 
 ---
 
@@ -36,8 +38,7 @@ _[dynplayer.win](https://dynplayer.win){:target="_blank"}_
 - 각 playlist를 하나의 user sequence로 가정하여 추천 문제를 구성
 - user-item의 bipartite graph 생성하여 그래프 임베딩 학습에 사용
 
-![User-Item Bipartite Graph](https://eoo0m.github.io/my-page/assets/img/portfolio-000.png){: width="600" }
-_User-Item Bipartite Graph_
+<p align="center"><img src="/my-page/assets/img/portfolio-000.png" width="600" alt="User-Item Bipartite Graph"><br><em>User-Item Bipartite Graph</em></p>
 
 ### Item2Vec
 
@@ -58,8 +59,7 @@ _User-Item Bipartite Graph_
 - 두 view 간 대조학습(InfoNCE)을 통해 같은 노드는 가깝게, 다른 노드는 더 멀어지도록 학습
 - 임베딩 공간에서 uniformity 개선 → 더 균형 잡힌 representation 형성
 
-![LightGCN vs SimGCL](https://eoo0m.github.io/my-page/assets/img/portfolio-001.png)
-_t-SNE로 2차원 벡터 만든 후 KDE plot — LightGCN vs SimGCL_
+<p align="center"><img src="/my-page/assets/img/portfolio-001.png" alt="LightGCN vs SimGCL"><br><em>t-SNE로 2차원 벡터 만든 후 KDE plot — LightGCN vs SimGCL</em></p>
 
 ### 전체 성능 비교 (Leave-One-Out 평가)
 
@@ -101,8 +101,7 @@ _t-SNE로 2차원 벡터 만든 후 KDE plot — LightGCN vs SimGCL_
 > 그래프 모델은 유저 임베딩을 정적으로 학습하기 때문에, 현재 세션 기반의 동적 유저 표현이 불가능합니다. 이를 보완하기 위해 Two-Tower 모델을 도입하여 세션 내 트랙 임베딩으로부터 유저 임베딩을 실시간으로 생성합니다.
 {: .prompt-tip }
 
-![Two-Tower Model Architecture](https://eoo0m.github.io/my-page/assets/img/portfolio-002.png){: width="550" }
-_Two-Tower Model Architecture_
+<p align="center"><img src="/my-page/assets/img/portfolio-002.png" width="550" alt="Two-Tower Model Architecture"><br><em>Two-Tower Model Architecture</em></p>
 
 ### Architecture
 
@@ -142,8 +141,7 @@ _Two-Tower Model Architecture_
 > **Vector latency reduction:** 86.8ms → 42.0ms
 {: .prompt-info }
 
-![Recommendation Serving Pipeline](https://eoo0m.github.io/my-page/assets/img/portfolio-003.png)
-_/recommend Serving Pipeline_
+<p align="center"><img src="/my-page/assets/img/portfolio-003.png" alt="Recommendation Serving Pipeline"><br><em>/recommend Serving Pipeline</em></p>
 
 ---
 
@@ -165,8 +163,7 @@ _/recommend Serving Pipeline_
 - ANN search (HNSW)
 - 랭킹 모델(reranking)을 적용해 초기 검색 후보를 재정렬하여 검색 품질 고도화
 
-![Keyword Search Pipeline](https://eoo0m.github.io/my-page/assets/img/portfolio-004.png)
-_/search_keyword Serving Pipeline_
+<p align="center"><img src="/my-page/assets/img/portfolio-004.png" alt="Keyword Search Pipeline"><br><em>/search_keyword Serving Pipeline</em></p>
 
 ### 참고 논문
 
