@@ -26,6 +26,11 @@ toc: true
 comments:
   active: false
 
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
 paginate: 10
 
 defaults:
@@ -37,3 +42,9 @@ defaults:
       comments: false
       toc: true
       permalink: /posts/:title/
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
