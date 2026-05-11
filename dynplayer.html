@@ -10,9 +10,24 @@ title: Dynplayer
     border-bottom: 1px solid var(--border);
   }
   .dyn-logo {
-    width: 80px;
-    height: 80px;
+    width: 240px;
+    border-radius: 16px;
     margin: 0 auto 16px;
+    display: block;
+  }
+  .dyn-figure {
+    text-align: center;
+    margin: 24px 0;
+  }
+  .dyn-figure img {
+    max-width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .dyn-figure figcaption {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-top: 8px;
   }
   .dyn-hero h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -1px; }
   .dyn-hero .dyn-link {
@@ -92,25 +107,7 @@ title: Dynplayer
 </style>
 
 <div class="dyn-hero">
-  <div class="dyn-logo">
-    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- headband -->
-      <path d="M20 38 Q20 14 40 14 Q60 14 60 38" stroke="#333" stroke-width="5" fill="none" stroke-linecap="round"/>
-      <!-- left ear cup -->
-      <rect x="13" y="33" width="14" height="20" rx="3" fill="#555"/>
-      <rect x="16" y="33" width="8" height="20" rx="2" fill="#888"/>
-      <!-- right ear cup -->
-      <rect x="53" y="33" width="14" height="20" rx="3" fill="#555"/>
-      <rect x="56" y="33" width="8" height="20" rx="2" fill="#888"/>
-      <!-- cable left -->
-      <line x1="20" y1="53" x2="20" y2="62" stroke="#555" stroke-width="3" stroke-linecap="round"/>
-      <rect x="15" y="60" width="10" height="10" rx="2" fill="#aaa"/>
-      <!-- cable right -->
-      <line x1="60" y1="53" x2="60" y2="62" stroke="#555" stroke-width="3" stroke-linecap="round"/>
-      <rect x="55" y="60" width="10" height="10" rx="2" fill="#ccc"/>
-    </svg>
-  </div>
-  <h1>Dynplayer</h1>
+  <img class="dyn-logo" src="{{ 'assets/img/dynplayer-logo.png' | relative_url }}" alt="Dynplayer Logo">
   <a class="dyn-link" href="https://dynplayer.win" target="_blank">dynplayer.win</a>
 </div>
 
@@ -140,6 +137,11 @@ title: Dynplayer
     <li>user-item의 bipartite graph 생성하여 그래프 임베딩 학습에 사용</li>
   </ul>
 
+  <figure class="dyn-figure">
+    <img src="{{ 'assets/img/portfolio-000.png' | relative_url }}" alt="User-Item Bipartite Graph">
+    <figcaption>User-Item Bipartite Graph</figcaption>
+  </figure>
+
   <h3>Item2Vec</h3>
   <ul>
     <li>플레이리스트 내 트랙 co-occurrence를 기반으로 트랙 임베딩 학습 (Skip-gram + negative sampling)
@@ -164,6 +166,11 @@ title: Dynplayer
     <li>두 view 간 대조학습(InfoNCE)을 통해 같은 노드는 가깝게, 다른 노드는 더 멀어지도록 학습</li>
     <li>임베딩 공간에서 uniformity 개선 → 더 균형 잡힌 representation 형성</li>
   </ul>
+
+  <figure class="dyn-figure">
+    <img src="{{ 'assets/img/portfolio-001.png' | relative_url }}" alt="LightGCN vs SimGCL embedding distribution">
+    <figcaption>t-SNE로 2차원 벡터 만든 후 KDE plot &mdash; LightGCN vs SimGCL</figcaption>
+  </figure>
 
   <p style="margin-top: 24px;"><strong>전체 성능 비교</strong> (Leave-One-Out 평가)</p>
   <table class="dyn-table">
@@ -203,6 +210,11 @@ title: Dynplayer
 
   <div class="dyn-highlight">그래프 모델은 유저 임베딩을 정적으로 학습하기 때문에, 현재 세션 기반의 동적 유저 표현이 불가능합니다. 이를 보완하기 위해 Two-Tower 모델을 도입하여 세션 내 트랙 임베딩으로부터 유저 임베딩을 실시간으로 생성합니다.</div>
 
+  <figure class="dyn-figure">
+    <img src="{{ 'assets/img/portfolio-002.png' | relative_url }}" alt="Two-Tower Model Architecture">
+    <figcaption>Two-Tower Model Architecture</figcaption>
+  </figure>
+
   <h3>Architecture</h3>
   <ul>
     <li><strong>User Tower:</strong> 2-layer Transformer Encoder &mdash; 사용자 track sequence → user embedding</li>
@@ -241,6 +253,11 @@ title: Dynplayer
   </table>
 
   <div class="dyn-highlight"><strong>Vector latency reduction:</strong> 86.8ms → 42.0ms</div>
+
+  <figure class="dyn-figure">
+    <img src="{{ 'assets/img/portfolio-003.png' | relative_url }}" alt="Recommendation Serving Architecture">
+    <figcaption>/recommend Serving Pipeline</figcaption>
+  </figure>
 </div>
 
 <!-- Keyword Search -->
@@ -267,6 +284,11 @@ title: Dynplayer
     <li>ANN search (HNSW)</li>
     <li>랭킹 모델(reranking)을 적용해 초기 검색 후보를 재정렬하여 검색 품질 고도화</li>
   </ul>
+
+  <figure class="dyn-figure">
+    <img src="{{ 'assets/img/portfolio-004.png' | relative_url }}" alt="Keyword Search Serving Architecture">
+    <figcaption>/search_keyword Serving Pipeline</figcaption>
+  </figure>
 
   <h3>참고 논문</h3>
   <div class="dyn-refs">
