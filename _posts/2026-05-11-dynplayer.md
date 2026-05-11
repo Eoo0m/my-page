@@ -8,6 +8,21 @@ pin: true
 description: "SimGCL 기반 그래프 임베딩 + Two-Tower 모델로 80K 트랙 음악 추천 시스템을 설계·배포한 프로젝트"
 ---
 
+<style>
+.content p, .content a.popup.img-link, .content a.img-link, .content .shimmer,
+article .content p { text-align: left !important; display: block !important; margin-left: 0 !important; margin-right: auto !important; }
+article .content img, .content img { display: block !important; margin-left: 0 !important; margin-right: auto !important; }
+.content em { text-align: left !important; display: block !important; }
+.post-meta .d-flex.justify-content-between { display: none !important; }
+.post-meta .mt-3.mb-3 { text-align: left !important; }
+.post-meta .mt-3.mb-3 a { display: block !important; text-align: left !important; margin: 0 !important; }
+body { font-weight: 500; color: #111 !important; }
+h1,h2,h3,h4,h5,h6 { font-weight: 800 !important; color: #000 !important; }
+.content p, .content li { font-weight: 500; color: #111; }
+table th { font-weight: 700 !important; color: #000 !important; }
+table td { font-weight: 500; color: #111; }
+</style>
+
 <p>
   <img src="/assets/img/dynplayer-logo.png" width="240" alt="Dynplayer Logo" style="border-radius:16px;">
   <br>
