@@ -8,13 +8,10 @@ order: 4
 
   <div style="flex:1; min-width:280px;">
     <h2 style="font-size:1.6rem; font-weight:700; margin-bottom:16px;">About Me</h2>
-    <p style="font-size:1.05rem; line-height:1.8; margin-bottom:24px;">
+    <p style="font-size:1.05rem; line-height:1.8;">
       추천 시스템·표현학습·AI 기반 시스템 설계에 관심이 많은 ML 엔지니어입니다.
       다양한 논문의 방법론을 직접 구현해 성능 개선으로 연결하고, 80K 트랙 규모의 음악 추천 시스템을 설계·배포·운영한 경험이 있습니다.
     </p>
-    <a href="#summary" style="display:inline-block; padding:10px 24px; background:#f0f0f0; border-radius:8px; color:#333; font-weight:600; text-decoration:none;">
-      Go to Summary ↓
-    </a>
   </div>
 
   <div style="flex:1; min-width:280px;">
