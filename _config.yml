@@ -1,0 +1,11 @@
+title: 엄준서
+description: ML Engineer — 추천 시스템, 표현학습, AI 시스템 설계
+url: "https://eoo0m.github.io"
+baseurl: "/my-page"
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
