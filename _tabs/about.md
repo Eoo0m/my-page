@@ -86,5 +86,5 @@ order: 4
 
 ### Portfolio
 
-- [Dynplayer Portfolio (PDF)](/my-page/assets/Dynplayer.pdf){:target="_blank"}
-- [Portfolio (PDF)](/my-page/assets/portfolio.pdf){:target="_blank"}
+- [Dynplayer 포트폴리오 (한국어)](/my-page/assets/portfolio.pdf){:target="_blank"}
+- [Dynplayer Portfolio (English)](/my-page/assets/Dynplayer.pdf){:target="_blank"}
