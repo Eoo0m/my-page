@@ -98,10 +98,11 @@ a {
 }
 
 /* 이미지 좌측 정렬 강제 */
-.post-content .img-link,
-.post-content .preview-img,
-.post-content p:has(img),
-.post-content .shimmer {
+.content p,
+.content .img-link,
+.content .preview-img,
+.content .shimmer,
+article .content p {
   display: block !important;
   text-align: left !important;
   justify-content: flex-start !important;
@@ -109,13 +110,33 @@ a {
   margin-right: auto !important;
 }
 
-.post-content img {
+article .content img,
+.content img {
   display: block !important;
   margin-left: 0 !important;
   margin-right: auto !important;
 }
 
-.post-content em {
+article .content em,
+.content em {
   text-align: left !important;
   display: block !important;
+}
+
+/* Chirpy의 이미지 wrapper 좌측 정렬 */
+.img-link.shimmer,
+a.popup.img-link {
+  display: block !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+/* figure wrapper */
+figure, .img-wrapper {
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
+figcaption {
+  text-align: left !important;
 }
