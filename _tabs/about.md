@@ -50,8 +50,21 @@ order: 4
 
 ### CV
 
-- [이력서 (한국어)]({{ site.baseurl }}/assets/CV.pdf){:target="_blank"}
-- [CV (English)]({{ site.baseurl }}/assets/CV_eng.pdf){:target="_blank"}
+<div style="margin-bottom: 12px;">
+  <button onclick="switchCV('ko')" style="padding:6px 16px; border:1px solid #ddd; border-radius:6px; background:#333; color:#fff; cursor:pointer; margin-right:4px;">한국어</button>
+  <button onclick="switchCV('en')" style="padding:6px 16px; border:1px solid #ddd; border-radius:6px; background:transparent; color:inherit; cursor:pointer;">English</button>
+</div>
+
+<iframe id="cv-frame" src="/my-page/assets/CV.pdf" style="width:100%; height:800px; border:1px solid #ddd; border-radius:8px;"></iframe>
+
+<script>
+function switchCV(lang) {
+  document.getElementById('cv-frame').src = lang === 'en' ? '/my-page/assets/CV_eng.pdf' : '/my-page/assets/CV.pdf';
+  var btns = document.querySelectorAll('button[onclick^="switchCV"]');
+  btns.forEach(function(b){ b.style.background='transparent'; b.style.color='inherit'; });
+  event.target.style.background='#333'; event.target.style.color='#fff';
+}
+</script>
 
 ---
 
