@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>엄준서 | ML Engineer</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #e0e0e0;
+      --text-muted: #888;
+      --accent: #c0392b;
+      --accent-light: #e74c3c;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent-light); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: #fff; }
+
+    /* Header */
+    .header {
+      padding: 80px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .header h1 { font-size: 2.8rem; font-weight: 700; letter-spacing: -1px; }
+    .header .tagline {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-top: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .header .contact {
+      margin-top: 20px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .header .contact a { color: var(--text-muted); }
+    .header .contact a:hover { color: var(--accent-light); }
+
+    /* Nav */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+    }
+    nav a {
+      padding: 8px 20px;
+      border-radius: 6px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    nav a:hover, nav a.active {
+      background: var(--surface);
+      color: #fff;
+    }
+
+    /* Layout */
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-child { border-bottom: none; }
+
+    .section-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 32px;
+      font-weight: 600;
+    }
+
+    /* Experience / Project cards */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px;
+      margin-bottom: 20px;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-header h3 { font-size: 1.15rem; font-weight: 600; }
+    .card-header .period { color: var(--text-muted); font-size: 0.85rem; }
+    .card-role { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; }
+    .card ul { padding-left: 20px; }
+    .card li { margin-bottom: 6px; font-size: 0.95rem; color: var(--text); }
+    .card li li { color: var(--text-muted); font-size: 0.9rem; }
+
+    .badge {
+      display: inline-block;
+      background: rgba(192, 57, 43, 0.15);
+      color: var(--accent-light);
+      padding: 2px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-left: 8px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px 24px;
+      font-size: 0.95rem;
+    }
+    .skills-grid dt { color: var(--text-muted); font-weight: 500; }
+    .skills-grid dd { color: var(--text); }
+
+    /* Portfolio links */
+    .portfolio-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .portfolio-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .portfolio-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent-light);
+    }
+    .portfolio-links svg { width: 18px; height: 18px; }
+
+    /* CV tabs */
+    .cv-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .cv-tabs button {
+      padding: 8px 20px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .cv-tabs button.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .cv-tabs button:hover:not(.active) {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+    .cv-viewer {
+      width: 100%;
+      height: 800px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .cv-viewer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 { font-size: 2rem; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .card-header { flex-direction: column; }
+      .cv-viewer { height: 500px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header class="header">
+      <h1>엄준서</h1>
+      <p class="tagline">ML Engineer &mdash; 추천 시스템, 표현학습, AI 시스템 설계</p>
+      <div class="contact">
+        <span>jseom818@gmail.com</span>
+        <a href="https://github.com/Eoo0m" target="_blank">GitHub</a>
+        <a href="https://dynplayer.win" target="_blank">Dynplayer</a>
+      </div>
+    </header>
+
+    <nav>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#cv">CV</a>
+    </nav>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="section-title">Experience</div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>SK ON</h3>
+          <span class="period">2026.02 &ndash; 2026.04</span>
+        </div>
+        <div class="card-role">Intern, AI &amp; Digital Transformation</div>
+        <ul>
+          <li>윤활유 수요 예측 모델 개발
+            <ul>
+              <li>LightGBM 기반, 고객 엔트로피를 활용해 수요 안정성을 반영한 피처로 WAPE 20% &rarr; 15% 개선</li>
+            </ul>
+          </li>
+          <li>Databricks 기반 멀티모달 RAG 시스템 설계
+            <ul>
+              <li>차트/도표 중심 리포트를 VLM 기반 캡셔닝 후 임베딩하여 검색, 원본 이미지로 답변 생성</li>
+              <li>VLM 기반 평가 질문 자동 생성 및 자동 채점으로 RAG 성공률 정량 측정 (성공률 83%)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Generative Lab</h3>
+          <span class="period">2025.06 &ndash; 2025.08</span>
+        </div>
+        <div class="card-role">Software Engineer</div>
+        <ul>
+          <li>자연어 의도 기반 CJ Logistics API를 동적으로 호출하는 tool-calling agent로 CS 상담에서 배송조회/반품 자동화</li>
+          <li>월 10만 건 대규모 AI 상담 로그 분석 파이프라인 구축
+            <ul>
+              <li>AWS RDS &rarr; AWS Lambda(CoT 분석) &rarr; Google Sheets 자동 분석 파이프라인</li>
+              <li>상담 유형/이관사유 단위 대시보드로 AI 모델 취약 영역 정량 진단</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-title">Projects</div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>Dynplayer <a href="https://dynplayer.win" target="_blank" style="font-size:0.85rem;">dynplayer.win</a></h3>
+        </div>
+        <div class="card-role">음악 추천 시스템 설계/배포 (개인) &mdash; 80K 트랙</div>
+        <ul>
+          <li><strong>추천</strong>: SimGCL 기반 그래프 임베딩 + 대조학습으로 롱테일 성능 향상 (Recall@10 0.1726 &rarr; 0.1901)</li>
+          <li><strong>추천</strong>: Two-Tower 모델 기반 사용자 시퀀스 후보 생성</li>
+          <li><strong>검색 최적화</strong>: HNSW ANN 검색 도입, Recall@10 98.9% 유지하며 latency 2배 개선 (86.8ms &rarr; 42.0ms)</li>
+          <li><strong>키워드 검색</strong>: CLIP-inspired Two-Tower 구조로 자연어 음악 검색 구현</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>AI Festival (미래에셋 &times; 네이버 클로바)</h3>
+          <span class="badge">우수상 &bull; 500만원</span>
+        </div>
+        <ul>
+          <li>AI 필터버블을 해소하는 금융 AI 시스템 개발</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>DACON CTR Prediction (Toss)</h3>
+          <span class="badge">43/726 &bull; Top ~6%</span>
+        </div>
+        <ul>
+          <li>LightGBM, Bi-LSTM, DCN 모델로 시퀀스 데이터의 복잡한 피처 상호작용 학습</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" style="padding: 40px 0; border-bottom: 1px solid var(--border);">
+      <div class="section-title">Education</div>
+      <div class="card">
+        <div class="card-header">
+          <h3>Yonsei University</h3>
+          <span class="period">2020.03 &ndash; 2026.08</span>
+        </div>
+        <ul>
+          <li>Bachelor of Industrial Engineering</li>
+          <li>YBIGTA DS, Lead of Education</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="section-title">Skills</div>
+      <dl class="skills-grid">
+        <dt>Languages</dt>
+        <dd>Python, SQL</dd>
+        <dt>ML / DL</dt>
+        <dd>PyTorch, HuggingFace, LangChain</dd>
+        <dt>Infra</dt>
+        <dd>AWS, NCP, Linux, GitHub Actions, Supabase(pgvector), Cloudflare Pages</dd>
+        <dt>Backend / API</dt>
+        <dd>FastAPI, Uvicorn</dd>
+      </dl>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+      <div class="section-title">Portfolio</div>
+      <div class="portfolio-links">
+        <a href="assets/Dynplayer.pdf" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          Dynplayer Portfolio
+        </a>
+        <a href="assets/portfolio.pdf" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+          Portfolio
+        </a>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+      <div class="section-title">Curriculum Vitae</div>
+      <div class="cv-tabs">
+        <button class="active" onclick="switchCV('ko')">한국어</button>
+        <button onclick="switchCV('en')">English</button>
+      </div>
+      <div class="cv-viewer">
+        <iframe id="cv-frame" src="assets/CV.pdf"></iframe>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 엄준서. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function switchCV(lang) {
+      const frame = document.getElementById('cv-frame');
+      frame.src = lang === 'en' ? 'assets/CV_eng.pdf' : 'assets/CV.pdf';
+      document.querySelectorAll('.cv-tabs button').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    // Active nav highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    });
+  </script>
+
+</body>
+</html>
