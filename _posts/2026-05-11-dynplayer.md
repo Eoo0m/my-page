@@ -77,8 +77,7 @@ image:
 | LightGCN | 17.93 | 26.28 | 15.36 |
 | SimGCL | **22.91** | **28.01** | **23.73** |
 
-> 특히 비인기곡(롱테일)에서 큰 개선. SimGCL은 인기 아이템의 표현 분포를 더 균일하게 만들어 popularity bias를 완화하며, 그 결과 recall을 개선함
-{: .prompt-info }
+**→ 특히 비인기곡(롱테일)에서 큰 개선. SimGCL은 인기 아이템의 표현 분포를 더 균일하게 만들어 popularity bias를 완화하며, 그 결과 recall을 개선함**
 
 ### Uniformity by Popularity
 
@@ -98,8 +97,7 @@ image:
 
 ## Two-Tower Model
 
-> 그래프 모델은 유저 임베딩을 정적으로 학습하기 때문에, 현재 세션 기반의 동적 유저 표현이 불가능합니다. 이를 보완하기 위해 Two-Tower 모델을 도입하여 세션 내 트랙 임베딩으로부터 유저 임베딩을 실시간으로 생성합니다.
-{: .prompt-tip }
+**그래프 모델은 유저 임베딩을 정적으로 학습하기 때문에, 현재 세션 기반의 동적 유저 표현이 불가능합니다.** 이를 보완하기 위해 Two-Tower 모델을 도입하여 세션 내 트랙 임베딩으로부터 유저 임베딩을 실시간으로 생성합니다.
 
 <p align="center"><img src="/assets/img/portfolio-002.png" width="550" alt="Two-Tower Model Architecture"><br><em>Two-Tower Model Architecture</em></p>
 
@@ -126,8 +124,7 @@ image:
 | Two-Tower + LightGCN | 0.1604 | 0.2248 | 0.0935 | 0.1098 |
 | Two-Tower + SimGCL | **0.1926** | **0.2683** | **0.1144** | **0.1335** |
 
-> 그래프학습에서 우수했던 임베딩이 마찬가지로 더 좋은 성능을 보입니다.
-{: .prompt-info }
+**→ 그래프학습에서 우수했던 임베딩이 마찬가지로 더 좋은 성능을 보입니다.**
 
 ### HNSW 적용 결과 (m=16, ef_construction=64)
 
@@ -138,8 +135,7 @@ image:
 | Recall@10 | **98.9%** |
 | Recall@20 | 98.85% |
 
-> **Vector latency reduction:** 86.8ms → 42.0ms
-{: .prompt-info }
+**→ Vector latency reduction: 86.8ms → 42.0ms**
 
 <p align="center"><img src="/assets/img/portfolio-003.png" alt="Recommendation Serving Pipeline"><br><em>/recommend Serving Pipeline</em></p>
 
