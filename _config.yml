@@ -1,11 +1,39 @@
+theme: jekyll-theme-chirpy
+
+lang: ko
+timezone: Asia/Seoul
+
 title: 엄준서
-description: ML Engineer — 추천 시스템, 표현학습, AI 시스템 설계
+tagline: ML Engineer — 추천 시스템, 표현학습, AI 시스템 설계
+description: >-
+  엄준서의 포트폴리오 및 기술 블로그
+
 url: "https://eoo0m.github.io"
 baseurl: "/my-page"
-markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
 
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
+github:
+  username: Eoo0m
+
+social:
+  name: 엄준서
+  email: jseom818@gmail.com
+  links:
+    - https://github.com/Eoo0m
+
+avatar: /assets/img/dynplayer-logo.png
+
+toc: true
+comments:
+  active: false
+
+paginate: 10
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+      permalink: /posts/:title/
