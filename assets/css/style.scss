@@ -93,13 +93,6 @@ a {
 }
 
 /* 포스트 메타 (By 작성자, min read) 숨기기 */
-.post-meta .author,
-.post-meta .readtime,
-.post-meta > span:has(> em) {
-  display: none !important;
-}
-
-/* "Posted" 등 메타 텍스트도 숨기기 */
-.post-content .post-meta {
+.post-meta .d-flex.justify-content-between {
   display: none !important;
 }

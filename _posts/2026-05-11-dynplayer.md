@@ -6,8 +6,6 @@ categories: [Projects, Recommendation]
 tags: [music, recommendation, graph-embedding, two-tower, simgcl]
 pin: true
 description: "SimGCL 기반 그래프 임베딩 + Two-Tower 모델로 80K 트랙 음악 추천 시스템을 설계·배포한 프로젝트"
-image:
-  path: /assets/img/dynplayer-logo.png
 ---
 
 <p>
